@@ -25,6 +25,14 @@
   <body id="page-top">
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
+          {% block content %}
+          {% if user.is_authenticated %}
+            Hi {{ user.username }}!
+          {% else %}
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">login</a>
+          {% endif %}
+          {% endblock %}
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase"><strong>{% trans 'Welcome to Py-Challenge' %}</strong></h1>

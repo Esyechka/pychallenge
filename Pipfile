@@ -12,6 +12,8 @@ channels = "*"
 graphene-django = "*"
 sorl-thumbnail = "*"
 awesome-slugify = "*"
+social-auth-app-django = "*"
+python-social-auth = {extras = ["django"],version = "*"}
 
 [dev-packages]
 pytest = "*"
