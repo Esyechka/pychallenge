@@ -78,3 +78,10 @@ class Article(models.Model):
 
     def get_markdown(self):
         return markdownify(self.content)
+
+class Links(models.Model):
+    url = models.URLField(max_length=2100)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.url

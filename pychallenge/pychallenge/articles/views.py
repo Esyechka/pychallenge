@@ -18,6 +18,7 @@ class ArticlesListView(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context['popular_tags'] = Article.objects.get_counted_tags()
+        print(Article.objects.first().links_set.all())
         return context
 
     def get_queryset(self, **kwargs):

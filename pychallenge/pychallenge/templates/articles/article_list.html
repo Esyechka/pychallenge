@@ -42,10 +42,15 @@
               {% endfor %}
             </div>
           </div>
-        {% empty %}
+          <div>Article Urls</div>
+          {% for link in article.links_set.all %}
+          <li><a href="">{{link.url}}</a></li>
+          {% endfor %}
+          {% empty %}
           <h4 class="no-data">{% trans 'There is no published article yet' %}. <a href="{% url 'articles:write_new' %}">{% trans 'Be the first one to publish one' %}!</a></h4>
+         
         {% endfor %}
-
+        
         {% if is_paginated %}
           <ul class="pagination justify-content-center mb-4">
             {% if page_obj.has_previous %}
