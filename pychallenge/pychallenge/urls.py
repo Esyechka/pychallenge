@@ -18,7 +18,7 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path, re_path
+from django.urls import include, path, re_path
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
@@ -31,6 +31,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # User management
     # url(r'^users/', include('pychallenge.users.urls', namespace='users')),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     # url(r'^accounts/', include('allauth.urls')),
     # Third party apps here
     url(r'^graphql', GraphQLView.as_view(graphiql=True)),

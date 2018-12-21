@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-
     'channels',
     'graphene_django',
     'markdownx',
@@ -50,7 +49,9 @@ INSTALLED_APPS = [
     'pychallenge.news.apps.NewsConfig',
     'pychallenge.notifications.apps.NotificationsConfig',
     'pychallenge.qa.apps.QaConfig',
-    'pychallenge.search.apps.SearchConfig'
+    # 'pychallenge.search.apps.SearchConfig'
+    'accounts.apps.AccountsConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'pychallenge.urls'
+
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
