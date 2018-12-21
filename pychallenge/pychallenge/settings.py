@@ -66,7 +66,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'pychallenge.urls'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/articles/'
+LOGOUT_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
